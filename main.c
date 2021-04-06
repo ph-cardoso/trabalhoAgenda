@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "agenda.h"
+#include "agenda.c"
 
 int main()
 {
-    int n, i = 0;
-    Agenda agenda[MAX];
+    int n;
+    Lista *li = cria_lista();
 
     do
     {
         //MENU
+        system("cls");
         printf("MENU\n\n");
         printf("1. Inserir Contato\n");
         printf("2. Excluir Contato\n");
@@ -26,31 +27,31 @@ int main()
         switch (n)
         {
             case 1:
-                i = inserirContato(agenda, i);
+                insereContato(li);
             break;
             case 2:
-
+                excluiContato(li);
             break;
             case 3:
-
+                alterarContato(li);
             break;
             case 4:
-
+                pesquisarContato(li);
             break;
             case 5:
-                exibirContatos(agenda);
+                exibirContatos(li);
             break;
             case 6:
-
+                estadoAgenda(li);
             break;
             case 0:
             break;
             default:
                 printf("Opcao invalida! Insira novamente...");
                 getchar();
-                system("cls");
         }
     } while(n != 0);
-
+    
+    libera_lista(li);
     return 0;
 }
