@@ -95,22 +95,22 @@ void insereContato(Lista *li)
 
     while((choice == 'S') || (choice == 's')){
         system("cls");
+        printf("\n"); 
+        printf("||--------------------------------------------------------------|| \n");
+        printf("||------------------- Cadastro de Contatos ---------------------|| \n");
+        printf("||--------------------------------------------------------------|| \n\n"); 
         printf("Insira o nome do contato: \n");
         clean_stdin();
         scanf("%[^\n]", contato.nome);
-        //fgets(contato.nome, 34, stdin);
         printf("Insira o telefone do contato: \n");
         clean_stdin();
         scanf("%[^\n]", contato.telefone);
-        //fgets(contato.telefone, 14, stdin);
         printf("Insira o celular do contato: \n");
         clean_stdin();
         scanf("%[^\n]", contato.celular);
-        //fgets(contato.celular, 14, stdin);
         printf("Insira o e-mail do contato: \n");
         clean_stdin();
         scanf("%[^\n]", contato.email);
-        //fgets(contato.email, 39, stdin);
         
         x = insere_lista(li,contato);
         if(x==1)
@@ -136,10 +136,13 @@ void excluiContato(Lista *li)
 
     while((choice == 'S') || (choice == 's')){
         system("cls");
+        printf("\n");
+        printf("||--------------------------------------------------------------|| \n");
+        printf("||------------------- Exclusao de Contatos ---------------------|| \n");
+        printf("||--------------------------------------------------------------|| \n\n");
         printf("Insira o nome do contato a ser excluido: \n");
         clean_stdin();
         scanf("%[^\n]", exclui);
-        //fgets(exclui, 34, stdin);
         
         x = remove_lista(li, exclui);
         if(x==1)
@@ -163,10 +166,18 @@ void exibirContatos(Lista *li)
     system("cls");
     int i;
 
-    if(lista_vazia(li))
+    if(lista_vazia(li)){
+        printf("\n"); 
+        printf("||--------------------------------------------------------------||\n");
+        printf("||------------------- Lista de Contatos ------------------------||\n");
+        printf("||--------------------------------------------------------------||\n\n");
         puts("LISTA VAZIA!");
+    }
     else{
-        printf("SEUS CONTATOS\n\n");
+        printf("\n"); 
+        printf("||--------------------------------------------------------------||\n");
+        printf("||------------------- Lista de Contatos ------------------------||\n");
+        printf("||--------------------------------------------------------------||\n\n");
         for(i=0; i<li->qtd; i++){
             printf("Nome: %s\n", li->ct[i].nome);
             printf("Telefone: %s\n", li->ct[i].telefone);
@@ -189,6 +200,10 @@ void alterarContato(Lista *li){
     while((choice == 'S') || (choice == 's')){
         system("cls");
         i = 0;
+        printf("\n");
+        printf("||--------------------------------------------------------------|| \n");
+        printf("||------------------- Alteracao de Contatos --------------------|| \n");
+        printf("||--------------------------------------------------------------|| \n\n");
         printf("Insira o nome do contato a ser alterado: \n");
         clean_stdin();
         scanf("%[^\n]", altera);
@@ -228,9 +243,14 @@ void pesquisarContato(Lista *li){
     while((choice == 'S') || (choice == 's')){
         system("cls");
         i = 0;
+        printf("\n");
+        printf("||--------------------------------------------------------------|| \n");
+        printf("||--------------------- Pesquisar Contatos ---------------------|| \n");
+        printf("||--------------------------------------------------------------|| \n\n");
         printf("Insira o nome do contato a ser pesquisado: \n");
         clean_stdin();
         scanf("%[^\n]", pesquisa);
+        system("cls");
         //Realiza uma busca ao elemento que tem nome correspondente ao parâmetro
         while ((i < li->qtd) && (strcmp(li->ct[i].nome, pesquisa)))
             i++;
@@ -253,7 +273,10 @@ void pesquisarContato(Lista *li){
 //Exibe o estado da agenda
 void estadoAgenda(Lista *li){
     system("cls");
-    printf("ESTADO DA AGENDA\n\n");
+    printf("\n");
+    printf("||--------------------------------------------------------------|| \n");
+    printf("||--------------------- Status da Agenda -----------------------|| \n");
+    printf("||--------------------------------------------------------------|| \n\n");
     printf("Limite de cadastros: %d\n", MAX);
     printf("Contatos cadastrados: %d\n", li->qtd);
 

@@ -1,4 +1,4 @@
-#define MAX 100
+#define MAX 100 //Limite de contatos da Agenda
 
 struct Contato
 {

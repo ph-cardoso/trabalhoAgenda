@@ -21,7 +21,6 @@ int main()
         printf("0. Sair\n\n");
 
         printf("Opcao: ");
-        //clean_stdin();
         scanf("%d", &n);
 
         switch (n)
