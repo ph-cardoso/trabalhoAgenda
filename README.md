@@ -2,7 +2,6 @@
 
 Trabalho de Lista Contígua - Estrutura de Dados 1
 Pedro Henrique Lima Cardoso - 22007061
-Mark Davis Faria Almeida Junior - 22006093
 
 Orientações:
 Desenvolver um programa em C que simule as funcionalidades de uma Agenda.
